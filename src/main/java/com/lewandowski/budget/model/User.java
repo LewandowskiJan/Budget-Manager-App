@@ -19,13 +19,24 @@ public class User {
 
     private String email;
 
-    private boolean enable;
+    private boolean enabled;
 
     @ElementCollection
     @CollectionTable(name="roles")
     private List<String> roles;
 
     public User() {
+        super();
+        this.enabled = false;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public User setEnabled(boolean enabled) {
+        this.enabled = enabled;
+        return this;
     }
 
     public List<String> getRoles() {
