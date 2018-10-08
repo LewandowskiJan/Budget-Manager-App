@@ -2,86 +2,99 @@ package com.lewandowski.budget.dto;
 
 import com.lewandowski.budget.custom.annotation.PasswordMatches;
 import com.lewandowski.budget.custom.annotation.ValidEmail;
+import com.lewandowski.budget.custom.annotation.ValidPassword;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @PasswordMatches
 public class UserDto {
-
     @NotNull
-    @NotEmpty
+    @Size(min = 1, message = "{Size.userDto.firstName}")
     private String firstName;
 
     @NotNull
-    @NotEmpty
+    @Size(min = 1, message = "{Size.userDto.lastName}")
     private String lastName;
 
-
-    @NotNull
-    @NotEmpty
+    @ValidPassword
     private String password;
 
+    @NotNull
+    @Size(min = 1)
     private String matchingPassword;
 
     @ValidEmail
     @NotNull
-    @NotEmpty
+    @Size(min = 1, message = "{Size.userDto.email}")
     private String email;
 
-    public UserDto() {
+    private boolean isUsing2FA;
+
+    public String getEmail() {
+        return email;
     }
 
-    public UserDto(@NotNull @NotEmpty String firstName, @NotNull @NotEmpty String lastName, @NotNull @NotEmpty String password, String matchingPassword, @NotNull @NotEmpty String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.matchingPassword = matchingPassword;
+    public void setEmail(final String email) {
         this.email = email;
+    }
+
+    private Integer role;
+
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(final Integer role) {
+        this.role = role;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public UserDto setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
-        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public UserDto setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
-        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public UserDto setPassword(String password) {
+    public void setPassword(final String password) {
         this.password = password;
-        return this;
     }
 
     public String getMatchingPassword() {
         return matchingPassword;
     }
 
-    public UserDto setMatchingPassword(String matchingPassword) {
+    public void setMatchingPassword(final String matchingPassword) {
         this.matchingPassword = matchingPassword;
-        return this;
     }
 
-    public String getEmail() {
-        return email;
+    public boolean isUsing2FA() {
+        return isUsing2FA;
     }
 
-    public UserDto setEmail(String email) {
-        this.email = email;
-        return this;
+    public void setUsing2FA(boolean isUsing2FA) {
+        this.isUsing2FA = isUsing2FA;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder builder = new StringBuilder();
+        builder.append("UserDto [firstName=").append(firstName).append(", lastName=").append(lastName).append(", password=").append(password).append(", matchingPassword=").append(matchingPassword).append(", email=").append(email).append(", isUsing2FA=")
+                .append(isUsing2FA).append(", role=").append(role).append("]");
+        return builder.toString();
+    }
+
 }
