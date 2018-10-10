@@ -1,6 +1,6 @@
 package com.lewandowski.budget.custom.handler;
 
-import com.lewandowski.budget.model.User;
+import com.lewandowski.budget.persistence.model.User;
 import org.springframework.context.ApplicationEvent;
 
 import java.util.Locale;

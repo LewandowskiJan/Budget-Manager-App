@@ -1,6 +1,6 @@
 package com.lewandowski.budget.custom.handler;
 
-import com.lewandowski.budget.model.User;
+import com.lewandowski.budget.persistence.model.User;
 import com.lewandowski.budget.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -32,7 +32,7 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
     private void confirmRegistration(OnRegistrationCompleteEvent event) {
         User user = event.getUser();
         String token = UUID.randomUUID().toString();
-        service.createVerificationToken(user, token);
+        service.createVerificationTokenForUser(user, token);
 
         String recipientAddress = user.getEmail();
         String subject = "Registration Confirmation";
