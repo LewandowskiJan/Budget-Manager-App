@@ -1,7 +1,8 @@
 package com.lewandowski.budget.service;
 
-import com.lewandowski.budget.model.User;
-import com.lewandowski.budget.repository.IUserRepository;
+import com.lewandowski.budget.persistence.model.Role;
+import com.lewandowski.budget.persistence.model.User;
+import com.lewandowski.budget.persistence.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -48,10 +50,10 @@ public class MyUserDetailsService implements UserDetailsService {
         }
     }
 
-    private static List<GrantedAuthority> getAuthorities(List<String> roles) {
+    private static List<GrantedAuthority> getAuthorities(Collection<Role> roles) {
         List<GrantedAuthority> authorities = new ArrayList<>();
-        for (String role : roles) {
-            authorities.add(new SimpleGrantedAuthority(role));
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.toString()));
         }
         return authorities;
     }
