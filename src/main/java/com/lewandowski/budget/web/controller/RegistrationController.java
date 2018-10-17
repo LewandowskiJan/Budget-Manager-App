@@ -1,10 +1,10 @@
-package com.lewandowski.budget.controller;
+package com.lewandowski.budget.web.controller;
 
-import com.lewandowski.budget.custom.exception.UserNotFoundException;
+import com.lewandowski.budget.web.error.UserNotFoundException;
 import com.lewandowski.budget.custom.handler.OnRegistrationCompleteEvent;
-import com.lewandowski.budget.dto.GenericResponse;
-import com.lewandowski.budget.dto.PasswordDto;
-import com.lewandowski.budget.dto.UserDto;
+import com.lewandowski.budget.web.dto.GenericResponse;
+import com.lewandowski.budget.web.dto.PasswordDto;
+import com.lewandowski.budget.web.dto.UserDto;
 import com.lewandowski.budget.persistence.model.PasswordResetToken;
 import com.lewandowski.budget.persistence.model.User;
 import com.lewandowski.budget.persistence.model.VerificationToken;
