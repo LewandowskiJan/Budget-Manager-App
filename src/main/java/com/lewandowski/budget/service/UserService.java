@@ -1,7 +1,7 @@
 package com.lewandowski.budget.service;
 
-import com.lewandowski.budget.custom.exception.UserAlreadyExistException;
-import com.lewandowski.budget.dto.UserDto;
+import com.lewandowski.budget.web.error.UserAlreadyExistException;
+import com.lewandowski.budget.web.dto.UserDto;
 import com.lewandowski.budget.persistence.model.PasswordResetToken;
 import com.lewandowski.budget.persistence.model.User;
 import com.lewandowski.budget.persistence.model.VerificationToken;
