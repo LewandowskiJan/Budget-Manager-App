@@ -1,6 +1,5 @@
 package com.lewandowski.budget.custom.validator;
 
-import com.lewandowski.budget.custom.annotation.ValidPassword;
 import org.passay.*;
 
 import javax.validation.ConstraintValidator;

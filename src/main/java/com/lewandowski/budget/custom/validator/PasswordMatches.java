@@ -1,4 +1,4 @@
-package com.lewandowski.budget.custom.annotation;
+package com.lewandowski.budget.custom.validator;
 
 import com.lewandowski.budget.custom.validator.PasswordMatchesValidator;
 

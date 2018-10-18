@@ -1,7 +1,6 @@
 package com.lewandowski.budget.custom.validator;
 
-import com.lewandowski.budget.custom.annotation.PasswordMatches;
-import com.lewandowski.budget.dto.UserDto;
+import com.lewandowski.budget.web.dto.UserDto;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

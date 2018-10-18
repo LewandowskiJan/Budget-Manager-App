@@ -1,6 +1,4 @@
-package com.lewandowski.budget.custom.annotation;
-
-import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
+package com.lewandowski.budget.custom.validator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -11,13 +9,13 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+@Documented
+@Constraint(validatedBy = PasswordConstraintValidator.class)
 @Target({TYPE, FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
-@Constraint(validatedBy = EmailValidator.class)
-@Documented
-public @interface ValidEmail {
+public @interface ValidPassword {
 
-    String message() default "Invalid email";
+    String message() default "Invalid Password";
 
     Class<?>[] groups() default {};
 
