@@ -1,4 +1,4 @@
-package com.lewandowski.budget.dto;
+package com.lewandowski.budget.web.dto;
 
 public class GenericResponse {
     private String message;

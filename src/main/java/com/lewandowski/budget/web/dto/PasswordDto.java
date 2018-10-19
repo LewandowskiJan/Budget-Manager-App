@@ -1,6 +1,6 @@
-package com.lewandowski.budget.dto;
+package com.lewandowski.budget.web.dto;
 
-import com.lewandowski.budget.custom.annotation.ValidPassword;
+import com.lewandowski.budget.custom.validator.ValidPassword;
 
 public class PasswordDto {
 

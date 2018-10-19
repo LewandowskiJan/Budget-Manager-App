@@ -1,8 +1,8 @@
-package com.lewandowski.budget.dto;
+package com.lewandowski.budget.web.dto;
 
-import com.lewandowski.budget.custom.annotation.PasswordMatches;
-import com.lewandowski.budget.custom.annotation.ValidEmail;
-import com.lewandowski.budget.custom.annotation.ValidPassword;
+import com.lewandowski.budget.custom.validator.PasswordMatches;
+import com.lewandowski.budget.custom.validator.ValidEmail;
+import com.lewandowski.budget.custom.validator.ValidPassword;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
