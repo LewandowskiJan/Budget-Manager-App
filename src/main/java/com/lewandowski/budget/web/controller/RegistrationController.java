@@ -97,7 +97,7 @@ public class RegistrationController {
     }
 
 
-    @RequestMapping(value = "/regitrationConfirm", method = RequestMethod.GET)
+    @RequestMapping(value = "/registrationConfirm", method = RequestMethod.GET)
     public String confirmRegistration(
             Locale locale, Model model, @RequestParam("token") String token) {
         VerificationToken verificationToken = userService.getVerificationToken(token);
