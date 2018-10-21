@@ -1,7 +1,6 @@
-package com.lewandowski.budget.custom.handler;
+package com.lewandowski.budget.web.error;
 
-import com.lewandowski.budget.custom.exception.UserNotFoundException;
-import com.lewandowski.budget.dto.GenericResponse;
+import com.lewandowski.budget.web.dto.GenericResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpHeaders;

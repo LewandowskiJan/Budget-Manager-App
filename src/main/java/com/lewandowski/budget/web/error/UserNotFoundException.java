@@ -1,4 +1,4 @@
-package com.lewandowski.budget.custom.exception;
+package com.lewandowski.budget.web.error;
 
 public class UserNotFoundException extends Throwable {
 }
